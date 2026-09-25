@@ -1,29 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Blog Post</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+{% extends "layout.html" %}
 
-    <h1>Add a New Blog Post</h1>
+{% block title %}Add Post{% endblock %}
 
-    <form method="POST">
+{% block content %}
 
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author">
+    <section class="post-form">
+        <h1 class="post-form__title mb-4">Add a New Blog Post</h1>
 
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title">
+        <form class="post-form__form" method="POST">
 
-        <label for="content">Content:</label>
-        <textarea id="content" name="content"></textarea>
+            <div class="post-form__field mb-3">
+                <label class="post-form__label form-label"
+                       for="author">
+                    Author
+                </label>
 
-        <button type="submit">Create Post</button>
+                <input class="post-form__input form-control"
+                       type="text"
+                       id="author"
+                       name="author"
+                       required>
+            </div>
 
-    </form>
+            <div class="post-form__field mb-3">
+                <label class="post-form__label form-label"
+                       for="title">
+                    Title
+                </label>
 
-</body>
-</html>
+                <input class="post-form__input form-control"
+                       type="text"
+                       id="title"
+                       name="title"
+                       required>
+            </div>
+
+            <div class="post-form__field mb-3">
+                <label class="post-form__label form-label"
+                       for="content">
+                    Content
+                </label>
+
+                <textarea class="post-form__textarea form-control"
+                          id="content"
+                          name="content"
+                          rows="6"
+                          required></textarea>
+            </div>
+
+            <button class="post-form__submit btn btn-primary"
+                    type="submit">
+                Add Post
+            </button>
+
+        </form>
+    </section>
+
+{% endblock %}
