@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
-{% block title %}Add Post{% endblock %}
+{% block title %}Update Post{% endblock %}
 
 {% block content %}
 
-    <section class="post-form post-form--add">
-        <h1 class="post-form__title mb-4">Add a New Blog Post</h1>
+    <section class="post-form post-form--update">
+        <h1 class="post-form__title">Update Blog Post</h1>
 
         <form class="post-form__form" method="POST">
 
@@ -19,6 +19,7 @@
                        type="text"
                        id="author"
                        name="author"
+                       value="{{ post.author }}"
                        required>
             </div>
 
@@ -32,6 +33,7 @@
                        type="text"
                        id="title"
                        name="title"
+                       value="{{ post.title }}"
                        required>
             </div>
 
@@ -45,12 +47,12 @@
                           id="content"
                           name="content"
                           rows="6"
-                          required></textarea>
+                          required>{{ post.content }}</textarea>
             </div>
 
             <button class="post-form__submit btn btn-primary"
                     type="submit">
-                Add Post
+                Update Post
             </button>
 
         </form>

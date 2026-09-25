@@ -16,5 +16,11 @@
         "author": "Ivan Vasilev",
         "title": "Ivan Post",
         "content": "This is Ivans post."
+    },
+    {
+        "id": 4,
+        "author": "Peter",
+        "title": "ala bala",
+        "content": "ala bala portokala"
     }
 ]
